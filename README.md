@@ -1,24 +1,41 @@
-# Snowplow Analytics GTM Templates
+# Snowplow Analytics
 
-This is a collection of templates for GTM to make working with Snowplow Analytics a little easier. They are currently only in beta as I just whiped them up for my own purposes. You are free to re-use them, modify them, and/or redistibute them as you wish. If you could give me some of the credit that would be cool; if you make a valuable addition or change then please put in a PR so that others can benefit from it.
+Templates for Google Tag Manager to make working with [Snowplow Analytics](https://github.com/snowplow/snowplow) easier. Add Snowplow to a page, track structured or self-describing events and work with self-describing JSON schema's all without having to touch any code.
 
-The templates are:
+## Author
 
+Matt Mathias ([LinkedIn](https://www.linkedin.com/in/matt-mathias/))
 
-## Snowplow Analytics Tag
+## Release notes
 
-Designed to work like the Google Analytics tag that already exists. Can be used to add the base script to the page / fire a page view as well as re-used for structured or self-describing events.
+| Date | Notes |
+|------|-------|
+| 25 September 2019 | Initial Release (v0.9.0) |
 
-__NOTE: You may have to edit the permisions of this template to allow it to access the global variable(s) for your tracker name(s) if they are not already on the list.__
+## Details
 
-## Snowplow Settings Variable
+### Snowplow Analytics Tag
 
-Also works very similarly to how the Google Analytics settings variable works. This is a variable you can use to configure most Snowplow settings in one place.
+Designed to work a lot like the Google Analytics tag provided out of the box by Google Tag Manager.
 
-## Snowplow Context Variable
+1. **Initialize** the tracker script.
+2. Track a **Page View**.
+3. Track a **Structured Event**
+4. Track a **Self-describing Events**
+5. Supports **Global Contexts**
+6. Supports **Event Contexts**
+7. __Requires__ a *Snowplow Settings* variable
 
-Allows you to create a self-describing JSON schema to attach to snowplow events in a user-friendly interface. Can be set to be undefined except in certain conditions.
+>NOTE: You will have edit the permisions of this template to allow it to access the global variable(s) for your tracker name(s) if they are not already on in the permissions list that is hard coded. The required keys are *{tracker-name}*, *{tracker-name}.q*, *{tracker-name}.q.push*
 
-## Snowplow Context List Variable
+### Snowplow Settings Variable
+
+Works in a manner consistent with the Google Analytics Settings variables provided by Google Tag Manager out of the box. Allows for setting **most** of the Snowplow Analytics configuration settings in an easy to use interface. Required by the Snowplow Analytics tag.
+
+### Snowplow Context Variable
+
+Create self-describing JSON schemas for use as additional contexts, or self-describing events with Snowplow Analytics. Allows you to define to vendor, schema name, version, and properties of the schema without having to touch any JavaScript.
+
+### Snowplow Context List Variable
 
 This variable is a function that will check return an array of the Snowplow Contexts you specify as long as those contexts are defined, can also be de-duplicated with another list if desired.
