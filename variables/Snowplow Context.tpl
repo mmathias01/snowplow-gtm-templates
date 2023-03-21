@@ -210,7 +210,7 @@ const context = {
 };
 
 schemaProperties.forEach(schemaProperty => {
-  	if(schemaProperty.fieldName.toString() && schemaProperty.fieldData.toString()) { 
+  	if(schemaProperty.fieldName && schemaProperty.fieldData + '' && schemaProperty.fieldData !== null) { 
     	context.data[schemaProperty.fieldName] = schemaProperty.fieldData;
     }
 });
